@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-search-box',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-box.component.scss']
 })
 export class SearchBoxComponent {
+
+  @ViewChild("search") search!: ElementRef<HTMLInputElement>;
+
+  searchTag(): void {
+    console.log(this.search.nativeElement.value);
+  }
 
 }
