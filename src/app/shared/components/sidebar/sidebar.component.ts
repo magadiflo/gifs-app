@@ -16,4 +16,8 @@ export class SidebarComponent {
 
   constructor(private _gifsService: GifsService) { }
 
+  searchTag(tag: string): void {
+    this._gifsService.searchTag(tag);
+  }
+
 }
