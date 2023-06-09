@@ -39,6 +39,7 @@ export class GifsService {
     }
     this._tagHistory.unshift(tag);
     this._tagHistory = this._limitHistory();
+    this._saveLocalStogare();
   }
 
   private _tagExist(tag: string): boolean {
@@ -51,5 +52,9 @@ export class GifsService {
 
   private _isInvalid(tag: string): boolean {
     return !tag || tag.trim().length === 0;
+  }
+
+  private _saveLocalStogare(): void {
+    localStorage.setItem('history', JSON.stringify(this._tagHistory));
   }
 }
