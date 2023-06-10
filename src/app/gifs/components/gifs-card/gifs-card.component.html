@@ -1,4 +1,5 @@
 <figure class="figure">
-  <img [src]="gif.images.downsized_medium.url" class="figure-img img-fluid rounded" alt="{{ gif.title }}">
-  <figcaption class="figure-caption text-end">{{ gif.title }}</figcaption>
+  <!-- <img [src]="gif.images.downsized_medium.url" class="figure-img img-fluid rounded" alt="{{ gif.title }}"> -->
+  <app-lazy-image class="figure-img img-fluid rounded"></app-lazy-image>
+  <figcaption class="figure-caption text-end">{{ gif.title || 'No title!'}}</figcaption>
 </figure>
